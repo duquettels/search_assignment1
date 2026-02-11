@@ -28,8 +28,9 @@ def bfs_grid(grid, start, goal):
         if current_node == goal:
             return path
 
-        # explore neighbors (up, down, left, right)
-        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        # explore neighbors
+        # directions are in the order of right, left, down, up
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0)] 
         for dr, dc in directions:
             nr, nc = current_node[0] + dr, current_node[1] + dc
 
@@ -61,8 +62,9 @@ def dfs_grid(grid, start, goal):
         if current_node not in visited:
             visited.add(current_node)
 
-            # explore neighbors (up, down, left, right)
-            directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+            # explore neighbors 
+            # directions are in the order of right, left, down, up
+            directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
             for dr, dc in directions:
                 nr, nc = current_node[0] + dr, current_node[1] + dc
 
